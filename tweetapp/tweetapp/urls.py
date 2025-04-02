@@ -22,5 +22,5 @@ from django.http import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tweet/', include('Tweet.urls')),
+    path('tweet/', include('TweetsubApp.urls')),
 ]   +   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
