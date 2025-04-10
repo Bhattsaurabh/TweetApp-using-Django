@@ -61,10 +61,14 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)    # not save form in DB
-            user.set_password(form.cleaned_data(['password1']))
+            user.set_password(form.cleaned_data['password1'])
             user.save()        # commit = false ni h toh form DB m save hoga
             login(request, user)  #automatically logged in user
             return redirect('tweet_list')
     else:
         form = UserRegistrationForm()
-        return render(request, 'registration/register.html', {'form' : form})
+    
+    return render(request, 'registration/register.html', {'form' : form})
+
+    
+    

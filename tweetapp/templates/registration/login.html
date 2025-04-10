@@ -1,22 +1,21 @@
 {% extends "layout.html" %}
 
 {% block title %} 
-    Register
+    Login
 {% endblock %}
 
 
 {% block content %}
-    <h2>Register Form</h2>
+<h2>Login Form</h2>
 <form method ="post" >
     {% csrf_token %}
     {{form.as_p}}
-    <button class="btn btn-primary"> Register</button>
+    <button class="btn btn-primary"> Login</button>
 </form>
 
-
 <p> 
-   Already registered? <a class="btn btn-secondary" href="{%url 'login'%}">
-        Login here
+    Dont have an account? <a class="btn btn-primary" href="{%url 'register'%}">
+        Register here
     </a> 
 </p>
 
